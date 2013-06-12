@@ -33,6 +33,7 @@ echo "$checksum  $tar_file" > $checksum_file
 md5sum -c $checksum_file
 
 tar -xf $tar_file
+mkdir debian/opt
 cd debian/opt
 tar -xf ../../$tar_file
 cd -
