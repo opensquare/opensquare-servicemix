@@ -1,9 +1,9 @@
 Package: opensquare-servicemix
-Version: package_version
+Version: PACKAGE_VERSION
 Section: esb
 Priority: optional
 Architecture: all
 Maintainer: Open Square Ltd <info@opensquare.co.uk>
 Homepage: http://www.opensquare.co.uk/
-Description: Apache Servicemix packaged as a service.
- Apache Servicemix packaged as a service.
+Description: Apache Servicemix SERVICEMIX_VERSION packaged as a service.
+ Apache Servicemix SERVICEMIX_VERSION packaged as a service.

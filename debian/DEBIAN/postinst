@@ -1,0 +1,3 @@
+#!/bin/sh
+unlink /opt/servicemix
+ln -s /opt/apache-servicemix-SERVICEMIX_VERSION /opt/servicemix

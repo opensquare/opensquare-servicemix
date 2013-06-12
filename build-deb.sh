@@ -39,9 +39,11 @@ echo "Extracting tar"
 tar -xf ../../$tar_file
 cd -
 
-rm -rf `find debian -name ".svn"`
-sed -i "s/\YEAR/`date +%Y`/g" debian/DEBIAN/copyright
-sed -i "s/\package_version/${package_version}/g" debian/DEBIAN/control
+# Inject values into package control files
+sed -i "s/\YEAR/`date +%Y`/g" debian/DEBIAN/*
+sed -i "s/\PACKAGE_VERSION/${package_version}/g" debian/DEBIAN/*
+sed -i "s/\SERVICEMIX_VERSION/${servicemix_version}/g" debian/DEBIAN/*
+
 chmod -R 0755 debian/DEBIAN
 
 dpkg-deb --build debian $package || { echo "Failed to build the debian package"; exit 1; } 
