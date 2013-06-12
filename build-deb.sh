@@ -21,26 +21,27 @@ cp -r debian $target
 
 cd $target
 
-# Download tar and checksum
+echo "Downloading Servicemix tar checksum"
 wget ${md5_url}
+echo "Downloading Servicemix tar from apache.org"
 wget ${tar_url}
 
 # Build correct format checksum file
 checksum="`cat ${checksum_file}`"
 echo "$checksum  $tar_file" > $checksum_file
 
-# Use checksum file to verify tar
+echo "Verifying download via MD5 checksum"
 md5sum -c $checksum_file
 
-tar -xf $tar_file
 mkdir debian/opt
 cd debian/opt
+echo "Extracting tar"
 tar -xf ../../$tar_file
 cd -
 
 rm -rf `find debian -name ".svn"`
 sed -i "s/\YEAR/`date +%Y`/g" debian/DEBIAN/copyright
 sed -i "s/\package_version/${package_version}/g" debian/DEBIAN/control
-#chmod -R 0555 debian/DEBIAN/*
 chmod -R 0755 debian/DEBIAN
+
 dpkg-deb --build debian $package || { echo "Failed to build the debian package"; exit 1; } 
