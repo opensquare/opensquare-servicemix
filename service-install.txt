@@ -1,0 +1,11 @@
+# install:
+smx# features:install wrapper
+smx# wrapper:install
+deb# ln -s /opt/apache-servicemix-4.5.0/bin/karaf-service /etc/init.d/
+deb# update-rc.d karaf-service defaults
+deb# /etc/init.d/karaf-service start
+
+# uninstall:
+deb# /etc/init.d/karaf-service stop
+deb# update-rc.d -f karaf-service remove
+deb# rm /etc/init.d/karaf-service
