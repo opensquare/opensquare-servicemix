@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-servicemix_version="4.5.0"
+servicemix_version="4.5.2"
 
 product="servicemix"
 package_version="${servicemix_version}-0"
