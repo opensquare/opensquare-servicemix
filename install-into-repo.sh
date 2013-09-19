@@ -28,9 +28,7 @@ do
     sudo chown -R $owner .
 done
 
-sudo cp noarch/*.rpm ${rpm}
-cd ..
+sudo cp *.rpm ${rpm}
 cd ${rpm}
 sudo createrepo .
 cd -
-
