@@ -15,4 +15,22 @@ apt-ftparchive packages ${i386} --db ${i386}/cache | gzip -9c | sudo tee ${i386}
 apt-ftparchive packages ${amd64} --db ${amd64}/cache | gzip -9c | sudo tee ${amd64}/Packages.gz 1>/dev/null
 cd -
 
-# No RPM build for now.
+
+echo "Creating RPM packages"
+file="what_owner.txt"
+touch $file
+owner=`ls -l $file | awk '{print $3":"$4}'`
+
+for debpack in `ls *.deb`
+do
+    echo "To RPM: " $debpack
+    sudo alien --to-rpm --scripts $debpack
+    sudo chown -R $owner .
+done
+
+sudo cp noarch/*.rpm ${rpm}
+cd ..
+cd ${rpm}
+sudo createrepo .
+cd -
+
