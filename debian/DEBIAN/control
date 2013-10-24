@@ -1,4 +1,4 @@
-Package: opensquare-servicemix
+Package: opensquare-servicemixALT
 Version: PACKAGE_VERSION
 Section: esb
 Priority: optional

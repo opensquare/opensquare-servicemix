@@ -1,7 +1,7 @@
 #!/bin/sh
-if [ -h /opt/servicemix ]
+if [ -h /opt/servicemixALT ]
 then
-	unlink /opt/servicemix
+	unlink /opt/servicemixALT
 fi
 
-ln -s /opt/apache-servicemix-SERVICEMIX_VERSION /opt/servicemix
+ln -s /opt/apache-servicemix-SERVICEMIX_VERSIONALT /opt/servicemixALT
