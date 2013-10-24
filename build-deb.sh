@@ -40,7 +40,7 @@ echo "Extracting tar"
 tar -xf ../../$tar_file
 cd -
 
-function buildPackage {
+buildPackage () {
     altName=$1
     package="opensquare-${product}${altName}_${package_version}_all.deb"
     packageDir="package${altName}"
