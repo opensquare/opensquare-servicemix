@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
 
-deb="/usr/share/packages-dev"
-rpm="/usr/share/redhat-packages-dev"
+deb="/usr/share/packages"
+rpm="/usr/share/redhat-packages"
 
 cd target
 echo "Installing debian packages"
